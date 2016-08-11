@@ -88,7 +88,7 @@ begin
     dscds1.First;
     while not dscds1.eof do
     begin
-      if (dscds1.FieldByName['Id'].asstring = edtPercorrer.Text) then
+      if (dscds1.FieldByName('Id').asstring = edtPercorrer.Text) then
       begin
         vEncontrou := True;
 
