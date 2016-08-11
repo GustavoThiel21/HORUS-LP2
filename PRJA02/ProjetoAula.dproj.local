@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/03/03 19:11:58.000.946,=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/26 12:14:20.000.122,=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/03/31 19:23:16.000.487,=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/08/10 20:35:42.544,=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/08/10 20:36:03.686,C:\LP2\HORUS-LP2\PRJA02\UnPRINCIPAL.dfm=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2016/08/10 20:36:03.686,C:\LP2\HORUS-LP2\PRJA02\UnPRINCIPAL.pas=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/08/10 20:37:21.026,C:\LP2\HORUS-LP2\PRJA02\ProjetoAula.dproj=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
