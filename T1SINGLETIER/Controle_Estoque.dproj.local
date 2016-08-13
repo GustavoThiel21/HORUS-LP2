@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/03/03 19:11:58.000.946,=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/26 12:14:20.000.122,=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/03/31 19:23:16.000.487,=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/08/11 19:33:37.000.488,=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/08/11 19:34:09.000.521,C:\LP2\HORUS-LP2\T1SINGLETIER\UNSingle.dfm=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2016/08/11 19:34:09.000.521,C:\LP2\HORUS-LP2\T1SINGLETIER\UNSingle.pas=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/08/11 19:34:31.000.818,C:\LP2\HORUS-LP2\T1SINGLETIER\Controle_Estoque.dproj=C:\Users\ASPIRE V5\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
