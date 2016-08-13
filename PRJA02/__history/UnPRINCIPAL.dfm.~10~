@@ -1,0 +1,280 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 469
+  ClientWidth = 811
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl1: TPanel
+    Left = 0
+    Top = 73
+    Width = 811
+    Height = 396
+    Align = alClient
+    Caption = 'pnl1'
+    TabOrder = 0
+    object grp2: TGroupBox
+      Left = 1
+      Top = 1
+      Width = 809
+      Height = 281
+      Align = alTop
+      Caption = 'Controles de Navega'#231#227'o e Edi'#231#227'o'
+      TabOrder = 0
+      object dbgrd1: TDBGrid
+        Left = 0
+        Top = 30
+        Width = 809
+        Height = 238
+        DataSource = ds2
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object dbnvgr1: TDBNavigator
+        Left = 447
+        Top = 5
+        Width = 359
+        Height = 28
+        DataSource = ds2
+        Align = alCustom
+        TabOrder = 1
+      end
+    end
+    object grp3: TGroupBox
+      Left = 1
+      Top = 272
+      Width = 809
+      Height = 123
+      Align = alBottom
+      Caption = 'Bot'#245'es'
+      TabOrder = 1
+      object lbl5: TLabel
+        Left = 556
+        Top = 19
+        Width = 143
+        Height = 13
+        Caption = 'Total dos Produtos Agregado '
+      end
+      object btnLimpar: TButton
+        Left = 14
+        Top = 24
+        Width = 75
+        Height = 25
+        Caption = 'btnLimpar'
+        TabOrder = 0
+        OnClick = btnLimparClick
+      end
+      object btnIndexarid: TButton
+        Left = 14
+        Top = 55
+        Width = 75
+        Height = 25
+        Caption = 'Indexar id'
+        TabOrder = 1
+        OnClick = btnIndexaridClick
+      end
+      object btnIndexarnome: TButton
+        Left = 14
+        Top = 86
+        Width = 75
+        Height = 25
+        Caption = 'Indexar nome'
+        TabOrder = 2
+        OnClick = btnIndexarnomeClick
+      end
+      object grp1: TGroupBox
+        Left = 128
+        Top = 3
+        Width = 137
+        Height = 141
+        Caption = 'grp1'
+        TabOrder = 3
+        object lbl2: TLabel
+          Left = 32
+          Top = 51
+          Width = 24
+          Height = 13
+          Caption = 'Valor'
+        end
+        object edtPercorrer: TEdit
+          Left = 3
+          Top = 24
+          Width = 121
+          Height = 21
+          TabOrder = 0
+          Text = 'edtPercorrer'
+        end
+        object btnPercorrer: TButton
+          Left = 24
+          Top = 72
+          Width = 75
+          Height = 25
+          Caption = 'btnPercorrer'
+          TabOrder = 1
+          OnClick = btnPercorrerClick
+        end
+      end
+      object grp4: TGroupBox
+        Left = 271
+        Top = 3
+        Width = 138
+        Height = 141
+        Caption = 'grp1'
+        TabOrder = 4
+        object lbl3: TLabel
+          Left = 32
+          Top = 53
+          Width = 24
+          Height = 13
+          Caption = 'Valor'
+        end
+        object edtLocate: TEdit
+          Left = 3
+          Top = 24
+          Width = 121
+          Height = 21
+          TabOrder = 0
+          Text = 'edt1'
+        end
+        object btnLocate: TButton
+          Left = 32
+          Top = 72
+          Width = 75
+          Height = 25
+          Caption = 'btn1'
+          TabOrder = 1
+        end
+      end
+      object grp5: TGroupBox
+        Left = 415
+        Top = 3
+        Width = 146
+        Height = 141
+        Caption = 'grp1'
+        TabOrder = 5
+        object lbl4: TLabel
+          Left = 40
+          Top = 53
+          Width = 24
+          Height = 13
+          Caption = 'Valor'
+        end
+        object edtFindkey: TEdit
+          Left = 14
+          Top = 24
+          Width = 121
+          Height = 21
+          TabOrder = 0
+          Text = 'edt1'
+        end
+        object btnFindkey: TButton
+          Left = 40
+          Top = 72
+          Width = 75
+          Height = 25
+          Caption = 'btn1'
+          TabOrder = 1
+        end
+      end
+      object dbedtTotal: TDBEdit
+        Left = 698
+        Top = 16
+        Width = 108
+        Height = 21
+        DataField = 'ProdutosTotal'
+        DataSource = ds2
+        TabOrder = 6
+      end
+    end
+  end
+  object grpFiltro: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 811
+    Height = 73
+    Align = alTop
+    Caption = 'Filtro'
+    TabOrder = 1
+    object lbl1: TLabel
+      Left = 24
+      Top = 32
+      Width = 66
+      Height = 13
+      Caption = 'Valor do Filtro'
+    end
+    object btnAdicionar: TButton
+      Left = 424
+      Top = 27
+      Width = 105
+      Height = 25
+      Caption = 'Adicionar Filtro'
+      TabOrder = 0
+    end
+    object btnRemover: TButton
+      Left = 552
+      Top = 27
+      Width = 105
+      Height = 25
+      Caption = 'Remover Filtro'
+      TabOrder = 1
+    end
+    object edtValorFiltro: TEdit
+      Left = 96
+      Top = 29
+      Width = 286
+      Height = 21
+      TabOrder = 2
+      Text = 'edt1'
+    end
+  end
+  object dscds1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    OnCalcFields = dscds1CalcFields
+    Left = 176
+    Top = 232
+    object dscds1Id: TIntegerField
+      FieldName = 'Id'
+    end
+    object dscds1Nome: TStringField
+      FieldName = 'Nome'
+      Size = 50
+    end
+    object dscds1Valor: TCurrencyField
+      FieldName = 'Valor'
+    end
+    object dscds1Quantidade: TFloatField
+      FieldName = 'Quantidade'
+    end
+    object dscds1Total: TCurrencyField
+      FieldKind = fkCalculated
+      FieldName = 'Total'
+      Calculated = True
+    end
+    object dscds1ProdutosTotal: TAggregateField
+      FieldName = 'ProdutosTotal'
+      Visible = True
+      Active = True
+      DisplayName = ''
+      Expression = 'sum(Quantidade * Valor)'
+    end
+  end
+  object ds2: TDataSource
+    DataSet = dscds1
+    Left = 304
+    Top = 248
+  end
+end

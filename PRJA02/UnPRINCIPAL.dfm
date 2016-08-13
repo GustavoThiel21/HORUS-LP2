@@ -22,7 +22,6 @@ object Form2: TForm2
     Align = alClient
     Caption = 'pnl1'
     TabOrder = 0
-    ExplicitTop = 79
     object grp2: TGroupBox
       Left = 1
       Top = 1
@@ -106,7 +105,7 @@ object Form2: TForm2
         object lbl2: TLabel
           Left = 32
           Top = 51
-          Width = 33
+          Width = 24
           Height = 13
           Caption = 'Valor'
         end
@@ -157,6 +156,7 @@ object Form2: TForm2
           Height = 25
           Caption = 'btn1'
           TabOrder = 1
+          OnClick = btnLocateClick
         end
       end
       object grp5: TGroupBox
@@ -188,6 +188,7 @@ object Form2: TForm2
           Height = 25
           Caption = 'btn1'
           TabOrder = 1
+          OnClick = btnFindkeyClick
         end
       end
       object dbedtTotal: TDBEdit
@@ -209,8 +210,6 @@ object Form2: TForm2
     Align = alTop
     Caption = 'Filtro'
     TabOrder = 1
-    ExplicitLeft = -1
-    ExplicitTop = -5
     object lbl1: TLabel
       Left = 24
       Top = 32
@@ -247,8 +246,8 @@ object Form2: TForm2
     Aggregates = <>
     Params = <>
     OnCalcFields = dscds1CalcFields
-    Left = 176
-    Top = 232
+    Left = 184
+    Top = 184
     object dscds1Id: TIntegerField
       FieldName = 'Id'
     end
@@ -277,7 +276,7 @@ object Form2: TForm2
   end
   object ds2: TDataSource
     DataSet = dscds1
-    Left = 304
-    Top = 248
+    Left = 296
+    Top = 184
   end
 end
