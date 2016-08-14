@@ -70,6 +70,7 @@ type
 
 var
   Form2: TForm2;
+  vEncontrou: Boolean;
 
 implementation
 
@@ -78,7 +79,6 @@ implementation
 procedure TForm2.BtnExecutarClick(Sender: TObject);
 begin
   case ComboBox2.ItemIndex of
-     //caso for 0 ele ira indexar pelos campos abaixo
     0:
       case ComboBox1.ItemIndex of
         0:
@@ -114,9 +114,7 @@ begin
           begin
             ClientDataSet1.IndexFieldNames := 'Total';
           end;
-      end; //fim do case 0
-
-      //caso for 1 ele ira usar o locate pelos campos abaixo
+      end;
     1:
       case ComboBox1.ItemIndex of
         0:
@@ -192,8 +190,131 @@ begin
               ShowMessage('Valor não encontrado!');
           end;
       end;
-  end;
+    2:
+      case ComboBox1.ItemIndex of
+        0:
+          begin
+            ClientDataSet1.IndexFieldNames := 'Codigo;Codigo';
+            if ClientDataSet1.FindKey([1, edtValor.Text]) then
 
+            begin
+              ShowMessage('Encontrado e registro posicionado!');
+            end
+            else
+              ShowMessage('Valor não encontrado!');
+
+          end;
+        1:
+          begin
+            ClientDataSet1.IndexFieldNames := 'Descricao;Descricao';
+            if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+            begin
+              ShowMessage('Encontrado e registro posicionado!');
+            end
+            else
+              ShowMessage('Valor não encontrado!');
+
+          end;
+        2:
+          begin
+            ClientDataSet1.IndexFieldNames := 'Unidade;Unidade';
+            if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+            begin
+              ShowMessage('Encontrado e registro posicionado!');
+            end
+            else
+              ShowMessage('Valor não encontrado!');
+
+          end;
+        3:
+          begin
+            ClientDataSet1.IndexFieldNames := 'Fornecedor;Fornecedor';
+            if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+            begin
+              ShowMessage('Encontrado e registro posicionado!');
+            end
+            else
+              ShowMessage('Valor não encontrado!');
+
+          end;
+        4:
+          begin
+            ClientDataSet1.IndexFieldNames := 'Data;Data';
+            if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+            begin
+              ShowMessage('Encontrado e registro posicionado!');
+            end
+            else
+              ShowMessage('Valor não encontrado!');
+
+          end;
+        5:
+          begin
+            ClientDataSet1.IndexFieldNames := 'Quantidade;Quantidade';
+            if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+            begin
+              ShowMessage('Encontrado e registro posicionado!');
+            end
+            else
+              ShowMessage('Valor não encontrado!');
+
+          end;
+        6:
+          begin
+            ClientDataSet1.IndexFieldNames := 'Unitario;Unitario';
+            if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+            begin
+              ShowMessage('Encontrado e registro posicionado!');
+            end
+            else
+              ShowMessage('Valor não encontrado!');
+
+          end;
+        7:
+          begin
+            ClientDataSet1.IndexFieldNames := 'Total;Total';
+            if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+            begin
+              ShowMessage('Encontrado e registro posicionado!');
+            end
+            else
+              ShowMessage('Valor não encontrado!');
+
+          end;
+
+      end;
+    3:
+      ClientDataSet1.EmptyDataSet;
+
+    4:
+      begin
+        vEncontrou := False;
+        ClientDataSet1.DisableControls;
+        try
+          ClientDataSet1.First;
+          while not ClientDataSet1.eof do
+          begin
+            if (ClientDataSet1.FieldByName('Codigo').asstring = edtValor.Text) then
+            begin
+              vEncontrou := True;
+              ShowMessage('Valor Encontrado');
+              Break;
+            end;
+            ClientDataSet1.Next;
+          end;
+        finally
+          ClientDataSet1.EnableControls;
+        end;
+
+      end;
+  end;
 end;
 
 procedure TForm2.ClientDataSet1BeforePost(DataSet: TDataSet);

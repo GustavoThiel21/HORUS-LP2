@@ -57,13 +57,11 @@ type
     Label13: TLabel;
     Label14: TLabel;
     DBGrid1: TDBGrid;
-    btn1: TButton;
     procedure ClientDataSet1CalcFields(DataSet: TDataSet);
     procedure FormCreate(Sender: TObject);
     procedure ClientDataSet1BeforePost(DataSet: TDataSet);
     procedure ComboBox2Change(Sender: TObject);
     procedure BtnExecutarClick(Sender: TObject);
-    procedure btn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,11 +75,6 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TForm2.btn1Click(Sender: TObject);
-begin
-  ShowMessage('Para filtrar por campos string você deve colocar a palavra entre '''' ');
-end;
 
 procedure TForm2.BtnExecutarClick(Sender: TObject);
 begin
@@ -477,56 +470,16 @@ begin
         0:
           begin
             ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Codigo = ' + edtValor.Text;
+            ClientDataSet1.Filter := 'codigo=' + edtValor.Text;
             ClientDataSet1.Filtered := True;
           end;
-        1:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Descricao = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        2:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Unidade = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        3:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Fornecedor = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        4:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Data = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        5:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Quantidade = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        6:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Unitario = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        7:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Total = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-      end;
-
-    6:
-      begin
-        ClientDataSet1.Filtered := False;
+   //     1:
+//2:
+//3:
+//4:
+//5:
+//6:
+//7:
       end;
 
   end;

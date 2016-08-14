@@ -523,7 +523,6 @@ begin
             ClientDataSet1.Filtered := True;
           end;
       end;
-
     6:
       begin
         ClientDataSet1.Filtered := False;

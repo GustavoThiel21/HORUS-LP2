@@ -134,8 +134,6 @@ object Form2: TForm2
       Height = 96
       Align = alTop
       TabOrder = 2
-      ExplicitLeft = 2
-      ExplicitTop = 171
       object Label11: TLabel
         Left = 17
         Top = 37
@@ -216,6 +214,15 @@ object Form2: TForm2
         Caption = 'Executar'
         TabOrder = 3
         OnClick = BtnExecutarClick
+      end
+      object btn1: TButton
+        Left = 222
+        Top = 14
+        Width = 92
+        Height = 25
+        Caption = 'Duvidas Filtrar'
+        TabOrder = 4
+        OnClick = btn1Click
       end
     end
     object GroupBox4: TGroupBox

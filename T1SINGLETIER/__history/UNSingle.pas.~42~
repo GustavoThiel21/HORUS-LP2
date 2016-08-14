@@ -473,55 +473,65 @@ begin
 
       end;
     5:
-      case ComboBox1.ItemIndex of
-        0:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Codigo = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        1:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Descricao = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        2:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Unidade = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        3:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Fornecedor = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        4:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Data = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        5:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Quantidade = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        6:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Unitario = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        7:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Total = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
+      if not (ClientDataSet1.FieldByName('Filtrar').IsNull) then
+      begin
+
+        case ComboBox1.ItemIndex of
+          0:
+            begin
+              ClientDataSet1.Filtered := False;
+              ClientDataSet1.Filter := 'Codigo = ' + edtValor.Text;
+              ClientDataSet1.Filtered := True;
+            end;
+          1:
+            begin
+              ClientDataSet1.Filtered := False;
+              ClientDataSet1.Filter := 'Descricao = ' + edtValor.Text;
+              ClientDataSet1.Filtered := True;
+            end;
+          2:
+            begin
+              ClientDataSet1.Filtered := False;
+              ClientDataSet1.Filter := 'Unidade = ' + edtValor.Text;
+              ClientDataSet1.Filtered := True;
+            end;
+          3:
+            begin
+              ClientDataSet1.Filtered := False;
+              ClientDataSet1.Filter := 'Fornecedor = ' + edtValor.Text;
+              ClientDataSet1.Filtered := True;
+            end;
+          4:
+            begin
+              ClientDataSet1.Filtered := False;
+              ClientDataSet1.Filter := 'Data = ' + edtValor.Text;
+              ClientDataSet1.Filtered := True;
+            end;
+          5:
+            begin
+              ClientDataSet1.Filtered := False;
+              ClientDataSet1.Filter := 'Quantidade = ' + edtValor.Text;
+              ClientDataSet1.Filtered := True;
+            end;
+          6:
+            begin
+              ClientDataSet1.Filtered := False;
+              ClientDataSet1.Filter := 'Unitario = ' + edtValor.Text;
+              ClientDataSet1.Filtered := True;
+            end;
+          7:
+            begin
+              ClientDataSet1.Filtered := False;
+              ClientDataSet1.Filter := 'Total = ' + edtValor.Text;
+              ClientDataSet1.Filtered := True;
+            end;
+        end;
+
+      end
+      else
+      begin
+        ShowMessage('O campo valor ficou vazio!');
+        Abort;
       end;
 
     6:
