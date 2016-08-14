@@ -123,405 +123,451 @@ begin
           end;
       end;
     1:
-      case ComboBox1.ItemIndex of
-        0:
-          begin
-            if ClientDataSet1.Locate('Codigo', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
+      begin
+        if (edtValor.Text <> '') then
+        begin
+
+          case ComboBox1.ItemIndex of
+            0:
+              begin
+                if ClientDataSet1.Locate('Codigo', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+              end;
+            1:
+              begin
+                if ClientDataSet1.Locate('Descricao', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+              end;
+            2:
+              begin
+                if ClientDataSet1.Locate('Unidade', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+              end;
+            3:
+              begin
+                if ClientDataSet1.Locate('Fornecedor', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+              end;
+            4:
+              begin
+                if ClientDataSet1.Locate('Data', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+              end;
+            5:
+              begin
+                if ClientDataSet1.Locate('Quantidade', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+              end;
+            6:
+              begin
+                if ClientDataSet1.Locate('Unitario', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+              end;
+            7:
+              begin
+                if ClientDataSet1.Locate('Total', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+              end;
           end;
-        1:
-          begin
-            if ClientDataSet1.Locate('Descricao', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-          end;
-        2:
-          begin
-            if ClientDataSet1.Locate('Unidade', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-          end;
-        3:
-          begin
-            if ClientDataSet1.Locate('Fornecedor', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-          end;
-        4:
-          begin
-            if ClientDataSet1.Locate('Data', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-          end;
-        5:
-          begin
-            if ClientDataSet1.Locate('Quantidade', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-          end;
-        6:
-          begin
-            if ClientDataSet1.Locate('Unitario', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-          end;
-        7:
-          begin
-            if ClientDataSet1.Locate('Total', edtValor.Text, [loCaseInsensitive, loPartialKey]) then
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-          end;
+        end
+        else
+        begin
+          ShowMessage('O campo valor ficou vazio!');
+          Abort;
+        end;
       end;
     2:
-      case ComboBox1.ItemIndex of
-        0:
-          begin
-            ClientDataSet1.IndexFieldNames := 'Codigo;Codigo';
-            if ClientDataSet1.FindKey([1, edtValor.Text]) then
+      begin
+        if (edtValor.Text <> '') then
+        begin
+          case ComboBox1.ItemIndex of
+            0:
+              begin
+                ClientDataSet1.IndexFieldNames := 'Codigo;Codigo';
+                if ClientDataSet1.FindKey([1, edtValor.Text]) then
 
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+
+              end;
+            1:
+              begin
+                ClientDataSet1.IndexFieldNames := 'Descricao;Descricao';
+                if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+
+              end;
+            2:
+              begin
+                ClientDataSet1.IndexFieldNames := 'Unidade;Unidade';
+                if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+
+              end;
+            3:
+              begin
+                ClientDataSet1.IndexFieldNames := 'Fornecedor;Fornecedor';
+                if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+
+              end;
+            4:
+              begin
+                ClientDataSet1.IndexFieldNames := 'Data;Data';
+                if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+
+              end;
+            5:
+              begin
+                ClientDataSet1.IndexFieldNames := 'Quantidade;Quantidade';
+                if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+
+              end;
+            6:
+              begin
+                ClientDataSet1.IndexFieldNames := 'Unitario;Unitario';
+                if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+
+              end;
+            7:
+              begin
+                ClientDataSet1.IndexFieldNames := 'Total;Total';
+                if ClientDataSet1.FindKey([1, edtValor.Text]) then
+
+                begin
+                  ShowMessage('Encontrado e registro posicionado!');
+                end
+                else
+                  ShowMessage('Valor não encontrado!');
+
+              end;
 
           end;
-        1:
-          begin
-            ClientDataSet1.IndexFieldNames := 'Descricao;Descricao';
-            if ClientDataSet1.FindKey([1, edtValor.Text]) then
-
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-
-          end;
-        2:
-          begin
-            ClientDataSet1.IndexFieldNames := 'Unidade;Unidade';
-            if ClientDataSet1.FindKey([1, edtValor.Text]) then
-
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-
-          end;
-        3:
-          begin
-            ClientDataSet1.IndexFieldNames := 'Fornecedor;Fornecedor';
-            if ClientDataSet1.FindKey([1, edtValor.Text]) then
-
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-
-          end;
-        4:
-          begin
-            ClientDataSet1.IndexFieldNames := 'Data;Data';
-            if ClientDataSet1.FindKey([1, edtValor.Text]) then
-
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-
-          end;
-        5:
-          begin
-            ClientDataSet1.IndexFieldNames := 'Quantidade;Quantidade';
-            if ClientDataSet1.FindKey([1, edtValor.Text]) then
-
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-
-          end;
-        6:
-          begin
-            ClientDataSet1.IndexFieldNames := 'Unitario;Unitario';
-            if ClientDataSet1.FindKey([1, edtValor.Text]) then
-
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-
-          end;
-        7:
-          begin
-            ClientDataSet1.IndexFieldNames := 'Total;Total';
-            if ClientDataSet1.FindKey([1, edtValor.Text]) then
-
-            begin
-              ShowMessage('Encontrado e registro posicionado!');
-            end
-            else
-              ShowMessage('Valor não encontrado!');
-
-          end;
-
+        end
+        else
+        begin
+          ShowMessage('O campo valor ficou vazio!');
+          Abort;
+        end;
       end;
     3:
       ClientDataSet1.EmptyDataSet;
 
     4:
-      case ComboBox1.ItemIndex of
-        0:
-          begin
-            vEncontrou := False;
-            ClientDataSet1.DisableControls;
-            try
-              ClientDataSet1.First;
-              while not ClientDataSet1.eof do
+      begin
+        if (edtValor.Text <> '') then
+        begin
+
+          case ComboBox1.ItemIndex of
+            0:
               begin
-                if (ClientDataSet1.FieldByName('Codigo').asstring = edtValor.Text) then
-                begin
-                  vEncontrou := True;
-                  ShowMessage('Valor Encontrado');
-                  Break;
+                vEncontrou := False;
+                ClientDataSet1.DisableControls;
+                try
+                  ClientDataSet1.First;
+                  while not ClientDataSet1.eof do
+                  begin
+                    if (ClientDataSet1.FieldByName('Codigo').asstring = edtValor.Text) then
+                    begin
+                      vEncontrou := True;
+                      ShowMessage('Valor Encontrado');
+                      Break;
+                    end;
+                    ClientDataSet1.Next;
+                  end;
+                finally
+                  ClientDataSet1.EnableControls;
                 end;
-                ClientDataSet1.Next;
+
               end;
-            finally
-              ClientDataSet1.EnableControls;
-            end;
+            1:
+              begin
+                vEncontrou := False;
+                ClientDataSet1.DisableControls;
+                try
+                  ClientDataSet1.First;
+                  while not ClientDataSet1.eof do
+                  begin
+                    if (ClientDataSet1.FieldByName('Descricao').asstring = edtValor.Text) then
+                    begin
+                      vEncontrou := True;
+                      ShowMessage('Valor Encontrado');
+                      Break;
+                    end;
+                    ClientDataSet1.Next;
+                  end;
+                finally
+                  ClientDataSet1.EnableControls;
+                end;
+
+              end;
+            2:
+              begin
+                vEncontrou := False;
+                ClientDataSet1.DisableControls;
+                try
+                  ClientDataSet1.First;
+                  while not ClientDataSet1.eof do
+                  begin
+                    if (ClientDataSet1.FieldByName('Unidade').asstring = edtValor.Text) then
+                    begin
+                      vEncontrou := True;
+                      ShowMessage('Valor Encontrado');
+                      Break;
+                    end;
+                    ClientDataSet1.Next;
+                  end;
+                finally
+                  ClientDataSet1.EnableControls;
+                end;
+
+              end;
+            3:
+              begin
+                vEncontrou := False;
+                ClientDataSet1.DisableControls;
+                try
+                  ClientDataSet1.First;
+                  while not ClientDataSet1.eof do
+                  begin
+                    if (ClientDataSet1.FieldByName('Fornecedor').asstring = edtValor.Text) then
+                    begin
+                      vEncontrou := True;
+                      ShowMessage('Valor Encontrado');
+                      Break;
+                    end;
+                    ClientDataSet1.Next;
+                  end;
+                finally
+                  ClientDataSet1.EnableControls;
+                end;
+
+              end;
+            4:
+              begin
+                vEncontrou := False;
+                ClientDataSet1.DisableControls;
+                try
+                  ClientDataSet1.First;
+                  while not ClientDataSet1.eof do
+                  begin
+                    if (ClientDataSet1.FieldByName('Data').asstring = edtValor.Text) then
+                    begin
+                      vEncontrou := True;
+                      ShowMessage('Valor Encontrado');
+                      Break;
+                    end;
+                    ClientDataSet1.Next;
+                  end;
+                finally
+                  ClientDataSet1.EnableControls;
+                end;
+
+              end;
+            5:
+              begin
+                vEncontrou := False;
+                ClientDataSet1.DisableControls;
+                try
+                  ClientDataSet1.First;
+                  while not ClientDataSet1.eof do
+                  begin
+                    if (ClientDataSet1.FieldByName('Quantidade').asstring = edtValor.Text) then
+                    begin
+                      vEncontrou := True;
+                      ShowMessage('Valor Encontrado');
+                      Break;
+                    end;
+                    ClientDataSet1.Next;
+                  end;
+                finally
+                  ClientDataSet1.EnableControls;
+                end;
+
+              end;
+            6:
+              begin
+                vEncontrou := False;
+                ClientDataSet1.DisableControls;
+                try
+                  ClientDataSet1.First;
+                  while not ClientDataSet1.eof do
+                  begin
+                    if (ClientDataSet1.FieldByName('Unitario').asstring = edtValor.Text) then
+                    begin
+                      vEncontrou := True;
+                      ShowMessage('Valor Encontrado');
+                      Break;
+                    end;
+                    ClientDataSet1.Next;
+                  end;
+                finally
+                  ClientDataSet1.EnableControls;
+                end;
+
+              end;
+            7:
+              begin
+                vEncontrou := False;
+                ClientDataSet1.DisableControls;
+                try
+                  ClientDataSet1.First;
+                  while not ClientDataSet1.eof do
+                  begin
+                    if (ClientDataSet1.FieldByName('Total').asstring = edtValor.Text) then
+                    begin
+                      vEncontrou := True;
+                      ShowMessage('Valor Encontrado');
+                      Break;
+                    end;
+                    ClientDataSet1.Next;
+                  end;
+                finally
+                  ClientDataSet1.EnableControls;
+                end;
+
+              end;
 
           end;
-        1:
-          begin
-            vEncontrou := False;
-            ClientDataSet1.DisableControls;
-            try
-              ClientDataSet1.First;
-              while not ClientDataSet1.eof do
-              begin
-                if (ClientDataSet1.FieldByName('Descricao').asstring = edtValor.Text) then
-                begin
-                  vEncontrou := True;
-                  ShowMessage('Valor Encontrado');
-                  Break;
-                end;
-                ClientDataSet1.Next;
-              end;
-            finally
-              ClientDataSet1.EnableControls;
-            end;
 
-          end;
-        2:
-          begin
-            vEncontrou := False;
-            ClientDataSet1.DisableControls;
-            try
-              ClientDataSet1.First;
-              while not ClientDataSet1.eof do
-              begin
-                if (ClientDataSet1.FieldByName('Unidade').asstring = edtValor.Text) then
-                begin
-                  vEncontrou := True;
-                  ShowMessage('Valor Encontrado');
-                  Break;
-                end;
-                ClientDataSet1.Next;
-              end;
-            finally
-              ClientDataSet1.EnableControls;
-            end;
-
-          end;
-        3:
-          begin
-            vEncontrou := False;
-            ClientDataSet1.DisableControls;
-            try
-              ClientDataSet1.First;
-              while not ClientDataSet1.eof do
-              begin
-                if (ClientDataSet1.FieldByName('Fornecedor').asstring = edtValor.Text) then
-                begin
-                  vEncontrou := True;
-                  ShowMessage('Valor Encontrado');
-                  Break;
-                end;
-                ClientDataSet1.Next;
-              end;
-            finally
-              ClientDataSet1.EnableControls;
-            end;
-
-          end;
-        4:
-          begin
-            vEncontrou := False;
-            ClientDataSet1.DisableControls;
-            try
-              ClientDataSet1.First;
-              while not ClientDataSet1.eof do
-              begin
-                if (ClientDataSet1.FieldByName('Data').asstring = edtValor.Text) then
-                begin
-                  vEncontrou := True;
-                  ShowMessage('Valor Encontrado');
-                  Break;
-                end;
-                ClientDataSet1.Next;
-              end;
-            finally
-              ClientDataSet1.EnableControls;
-            end;
-
-          end;
-        5:
-          begin
-            vEncontrou := False;
-            ClientDataSet1.DisableControls;
-            try
-              ClientDataSet1.First;
-              while not ClientDataSet1.eof do
-              begin
-                if (ClientDataSet1.FieldByName('Quantidade').asstring = edtValor.Text) then
-                begin
-                  vEncontrou := True;
-                  ShowMessage('Valor Encontrado');
-                  Break;
-                end;
-                ClientDataSet1.Next;
-              end;
-            finally
-              ClientDataSet1.EnableControls;
-            end;
-
-          end;
-        6:
-          begin
-            vEncontrou := False;
-            ClientDataSet1.DisableControls;
-            try
-              ClientDataSet1.First;
-              while not ClientDataSet1.eof do
-              begin
-                if (ClientDataSet1.FieldByName('Unitario').asstring = edtValor.Text) then
-                begin
-                  vEncontrou := True;
-                  ShowMessage('Valor Encontrado');
-                  Break;
-                end;
-                ClientDataSet1.Next;
-              end;
-            finally
-              ClientDataSet1.EnableControls;
-            end;
-
-          end;
-        7:
-          begin
-            vEncontrou := False;
-            ClientDataSet1.DisableControls;
-            try
-              ClientDataSet1.First;
-              while not ClientDataSet1.eof do
-              begin
-                if (ClientDataSet1.FieldByName('Total').asstring = edtValor.Text) then
-                begin
-                  vEncontrou := True;
-                  ShowMessage('Valor Encontrado');
-                  Break;
-                end;
-                ClientDataSet1.Next;
-              end;
-            finally
-              ClientDataSet1.EnableControls;
-            end;
-
-          end;
+        end
+        else
+        begin
+          ShowMessage('O campo valor ficou vazio!');
+          Abort;
+        end;
 
       end;
     5:
-      case ComboBox1.ItemIndex of
-        0:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Codigo = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
+      begin
+        if (edtValor.Text <> '') then
+        begin
+
+          case ComboBox1.ItemIndex of
+            0:
+              begin
+                ClientDataSet1.Filtered := False;
+                ClientDataSet1.Filter := 'Codigo = ' + edtValor.Text;
+                ClientDataSet1.Filtered := True;
+              end;
+            1:
+              begin
+                ClientDataSet1.Filtered := False;
+                ClientDataSet1.Filter := 'Descricao = ' + edtValor.Text;
+                ClientDataSet1.Filtered := True;
+              end;
+            2:
+              begin
+                ClientDataSet1.Filtered := False;
+                ClientDataSet1.Filter := 'Unidade = ' + edtValor.Text;
+                ClientDataSet1.Filtered := True;
+              end;
+            3:
+              begin
+                ClientDataSet1.Filtered := False;
+                ClientDataSet1.Filter := 'Fornecedor = ' + edtValor.Text;
+                ClientDataSet1.Filtered := True;
+              end;
+            4:
+              begin
+                ClientDataSet1.Filtered := False;
+                ClientDataSet1.Filter := 'Data = ' + edtValor.Text;
+                ClientDataSet1.Filtered := True;
+              end;
+            5:
+              begin
+                ClientDataSet1.Filtered := False;
+                ClientDataSet1.Filter := 'Quantidade = ' + edtValor.Text;
+                ClientDataSet1.Filtered := True;
+              end;
+            6:
+              begin
+                ClientDataSet1.Filtered := False;
+                ClientDataSet1.Filter := 'Unitario = ' + edtValor.Text;
+                ClientDataSet1.Filtered := True;
+              end;
+            7:
+              begin
+                ClientDataSet1.Filtered := False;
+                ClientDataSet1.Filter := 'Total = ' + edtValor.Text;
+                ClientDataSet1.Filtered := True;
+              end;
           end;
-        1:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Descricao = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        2:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Unidade = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        3:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Fornecedor = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        4:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Data = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        5:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Quantidade = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        6:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Unitario = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
-        7:
-          begin
-            ClientDataSet1.Filtered := False;
-            ClientDataSet1.Filter := 'Total = ' + edtValor.Text;
-            ClientDataSet1.Filtered := True;
-          end;
+
+        end
+        else
+        begin
+          ShowMessage('O campo valor ficou vazio!');
+          Abort;
+        end;
       end;
 
     6:
