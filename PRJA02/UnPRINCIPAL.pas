@@ -52,6 +52,7 @@ type
     procedure btnPercorrerClick(Sender: TObject);
     procedure btnLocateClick(Sender: TObject);
     procedure btnFindkeyClick(Sender: TObject);
+    procedure btnAdicionarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,10 +66,17 @@ implementation
 
 {$R *.dfm}
 
+procedure TForm2.btnAdicionarClick(Sender: TObject);
+begin
+  dscds1.Filtered := False;
+  dscds1.Filter := edtValorFiltro.Text;
+  dscds1.Filtered := True;
+end;
+
 procedure TForm2.btnFindkeyClick(Sender: TObject);
 begin
   dscds1.IndexFieldNames := 'Id;Id';
-  if dscds1.FindKey([1, edtFindkey.Text]) then
+  if dscds1.FindKey([2, edtFindkey.Text]) then
 
   begin
     ShowMessage('Encontrado e registro posicionado!');

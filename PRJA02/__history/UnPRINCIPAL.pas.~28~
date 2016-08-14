@@ -51,6 +51,7 @@ type
     procedure btnIndexarnomeClick(Sender: TObject);
     procedure btnPercorrerClick(Sender: TObject);
     procedure btnLocateClick(Sender: TObject);
+    procedure btnFindkeyClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,6 +64,18 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm2.btnFindkeyClick(Sender: TObject);
+begin
+  dscds1.IndexFieldNames := 'Id;Id';
+  if dscds1.FindKey([1, edtFindkey.Text]) then
+
+  begin
+    ShowMessage('Encontrado e registro posicionado!');
+  end
+  else
+    ShowMessage('Valor não encontrado!');
+end;
 
 procedure TForm2.btnIndexaridClick(Sender: TObject);
 begin
@@ -81,7 +94,7 @@ end;
 
 procedure TForm2.btnLocateClick(Sender: TObject);
 begin
-  if dscds1.Locate('Id', 1, []) then
+  if dscds1.Locate('Nome', edtLocate.Text, [loCaseInsensitive, loPartialKey]) then
   begin
     ShowMessage('Encontrado e registro posicionado!');
   end

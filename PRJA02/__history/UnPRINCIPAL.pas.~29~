@@ -50,6 +50,9 @@ type
     procedure btnIndexaridClick(Sender: TObject);
     procedure btnIndexarnomeClick(Sender: TObject);
     procedure btnPercorrerClick(Sender: TObject);
+    procedure btnLocateClick(Sender: TObject);
+    procedure btnFindkeyClick(Sender: TObject);
+    procedure btnAdicionarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,6 +65,25 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm2.btnAdicionarClick(Sender: TObject);
+begin
+  dscds1.Filtered := False;
+  dscds1.Filter := 'Id=1';
+  dscds1.Filtered := True;
+end;
+
+procedure TForm2.btnFindkeyClick(Sender: TObject);
+begin
+  dscds1.IndexFieldNames := 'Id;Id';
+  if dscds1.FindKey([2, edtFindkey.Text]) then
+
+  begin
+    ShowMessage('Encontrado e registro posicionado!');
+  end
+  else
+    ShowMessage('Valor não encontrado!');
+end;
 
 procedure TForm2.btnIndexaridClick(Sender: TObject);
 begin
@@ -76,6 +98,16 @@ end;
 procedure TForm2.btnLimparClick(Sender: TObject);
 begin
   dscds1.EmptyDataSet;
+end;
+
+procedure TForm2.btnLocateClick(Sender: TObject);
+begin
+  if dscds1.Locate('Nome', edtLocate.Text, [loCaseInsensitive, loPartialKey]) then
+  begin
+    ShowMessage('Encontrado e registro posicionado!');
+  end
+  else
+    ShowMessage('Valor não encontrado!');
 end;
 
 procedure TForm2.btnPercorrerClick(Sender: TObject);

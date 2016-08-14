@@ -224,6 +224,7 @@ object Form2: TForm2
       Height = 25
       Caption = 'Adicionar Filtro'
       TabOrder = 0
+      OnClick = btnAdicionarClick
     end
     object btnRemover: TButton
       Left = 552
