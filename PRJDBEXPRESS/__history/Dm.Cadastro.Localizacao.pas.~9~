@@ -1,0 +1,76 @@
+unit Dm.Cadastro.Localizacao;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.FMTBcd, Data.DB, Datasnap.DBClient,
+  Datasnap.Provider, Data.SqlExpr;
+
+type
+  TDmCadastroLocalizacao = class(TDataModule)
+    SdsPais: TSQLDataSet;
+    DspPais: TDataSetProvider;
+    CdsPais: TClientDataSet;
+    SdsPaisCODIGO: TLargeintField;
+    SdsPaisNOME: TStringField;
+    SdsPaisSIGLA: TStringField;
+    SdsPaisBACEN: TIntegerField;
+    CdsPaisCODIGO: TLargeintField;
+    CdsPaisNOME: TStringField;
+    CdsPaisSIGLA: TStringField;
+    CdsPaisBACEN: TIntegerField;
+    SdsEstado: TSQLDataSet;
+    DspEstado: TDataSetProvider;
+    CdsEstado: TClientDataSet;
+    SdsEstadoCODIGO: TLargeintField;
+    SdsEstadoNOME: TStringField;
+    SdsEstadoSIGLA: TStringField;
+    SdsEstadoCODIGO_PAIS: TLargeintField;
+    CdsEstadoCODIGO: TLargeintField;
+    CdsEstadoNOME: TStringField;
+    CdsEstadoSIGLA: TStringField;
+    CdsEstadoCODIGO_PAIS: TLargeintField;
+    SdsCidade: TSQLDataSet;
+    DspCidade: TDataSetProvider;
+    CdsCidade: TClientDataSet;
+    SdsCidadeCODIGO: TLargeintField;
+    SdsCidadeNOME: TStringField;
+    SdsCidadeIBGE: TIntegerField;
+    SdsCidadeCODIGO_ESTADO: TLargeintField;
+    CdsCidadeCODIGO: TLargeintField;
+    CdsCidadeNOME: TStringField;
+    CdsCidadeIBGE: TIntegerField;
+    CdsCidadeCODIGO_ESTADO: TLargeintField;
+    CdsEstadoPAIS_NOME: TStringField;
+    procedure CdsPaisAfterPost(DataSet: TDataSet);
+    procedure CdsPaisAfterDelete(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DmCadastroLocalizacao: TDmCadastroLocalizacao;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses
+  Dm.Database;
+
+{$R *.dfm}
+
+procedure TDmCadastroLocalizacao.CdsPaisAfterDelete(DataSet: TDataSet);
+begin
+  CdsCidade.ApplyUpdates(0);
+end;
+
+procedure TDmCadastroLocalizacao.CdsPaisAfterPost(DataSet: TDataSet);
+begin
+  CdsCidade.ApplyUpdates(0);
+end;
+
+end.
+

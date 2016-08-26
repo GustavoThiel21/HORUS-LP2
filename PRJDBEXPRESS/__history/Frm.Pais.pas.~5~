@@ -1,0 +1,27 @@
+unit Frm.Pais;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Cadastro.Localizacao,
+  Data.DB;
+
+type
+  TFrmPais = class(TForm)
+    DataSource1: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPais: TFrmPais;
+
+implementation
+
+{$R *.dfm}
+
+end.
+

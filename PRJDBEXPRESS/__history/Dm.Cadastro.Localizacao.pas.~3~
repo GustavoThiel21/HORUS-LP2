@@ -1,0 +1,27 @@
+unit Dm.Cadastro.Localizacao;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TDmCadastroLocalizacao = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DmCadastroLocalizacao: TDmCadastroLocalizacao;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses Dm.Database;
+
+{$R *.dfm}
+
+end.
