@@ -47,6 +47,7 @@ object DmDatabse: TDmDatabse
       'RoleName=RoleName'
       'ServerCharSet='
       'Trim Char=False')
+    Connected = True
     Left = 24
     Top = 8
   end

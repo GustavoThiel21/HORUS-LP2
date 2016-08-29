@@ -2,8 +2,8 @@ object FrmPais: TFrmPais
   Left = 0
   Top = 0
   Caption = 'FrmPais'
-  ClientHeight = 291
-  ClientWidth = 578
+  ClientHeight = 350
+  ClientWidth = 669
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,27 +18,30 @@ object FrmPais: TFrmPais
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 578
-    Height = 57
+    Width = 669
+    Height = 33
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 570
     object DBNavigator1: TDBNavigator
       Left = 1
       Top = 1
-      Width = 576
-      Height = 25
-      DataSource = DataSource1
-      Align = alTop
+      Width = 392
+      Height = 31
+      DataSource = DsPais
+      Align = alLeft
       TabOrder = 0
     end
   end
   object Panel2: TPanel
     Left = 0
-    Top = 57
-    Width = 578
+    Top = 33
+    Width = 669
     Height = 107
     Align = alTop
     TabOrder = 1
+    ExplicitTop = 57
+    ExplicitWidth = 578
     object Label1: TLabel
       Left = 64
       Top = 6
@@ -73,7 +76,7 @@ object FrmPais: TFrmPais
       Width = 121
       Height = 21
       DataField = 'CODIGO'
-      DataSource = DataSource1
+      DataSource = DsPais
       TabOrder = 0
     end
     object DBEditSigla: TDBEdit
@@ -82,7 +85,7 @@ object FrmPais: TFrmPais
       Width = 121
       Height = 21
       DataField = 'SIGLA'
-      DataSource = DataSource1
+      DataSource = DsPais
       TabOrder = 1
     end
     object DBEditNome: TDBEdit
@@ -91,7 +94,7 @@ object FrmPais: TFrmPais
       Width = 313
       Height = 21
       DataField = 'NOME'
-      DataSource = DataSource1
+      DataSource = DsPais
       TabOrder = 2
     end
     object DBEditBACEN: TDBEdit
@@ -100,25 +103,28 @@ object FrmPais: TFrmPais
       Width = 121
       Height = 21
       DataField = 'BACEN'
-      DataSource = DataSource1
+      DataSource = DsPais
       TabOrder = 3
     end
   end
   object Panel3: TPanel
     Left = 0
-    Top = 164
-    Width = 578
-    Height = 126
-    Align = alTop
+    Top = 140
+    Width = 669
+    Height = 210
+    Align = alClient
     Caption = 'Panel3'
     TabOrder = 2
+    ExplicitTop = 164
+    ExplicitWidth = 578
+    ExplicitHeight = 126
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
-      Width = 576
-      Height = 124
+      Width = 667
+      Height = 208
       Align = alClient
-      DataSource = DataSource1
+      DataSource = DsPais
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -151,7 +157,7 @@ object FrmPais: TFrmPais
         end>
     end
   end
-  object DataSource1: TDataSource
+  object DsPais: TDataSource
     DataSet = DmCadastroLocalizacao.CdsPais
     Left = 504
     Top = 32

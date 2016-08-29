@@ -1,0 +1,52 @@
+unit Frm.Cidade;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Cadastro.Localizacao, Data.DB,
+  Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
+
+type
+  TFrmCidade = class(TForm)
+    DsCidade: TDataSource;
+    DsEstado: TDataSource;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    DBNavigator1: TDBNavigator;
+    DBGrid1: TDBGrid;
+    DBEdtCodigo: TDBEdit;
+    DBEdtNome: TDBEdit;
+    DBEdtIbge: TDBEdit;
+    LblCodigo: TLabel;
+    LblNome: TLabel;
+    LblIbge: TLabel;
+    LblEstado: TLabel;
+    DBLkpCbEstado: TDBLookupComboBox;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmCidade: TFrmCidade;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmCidade.FormCreate(Sender: TObject);
+begin
+DmCadastroLocalizacao.CdsCidade.Open;
+end;
+
+procedure TFrmCidade.FormDestroy(Sender: TObject);
+begin
+DmCadastroLocalizacao.CdsCidade.Close;
+end;
+
+end.

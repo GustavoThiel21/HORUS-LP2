@@ -44,6 +44,7 @@ object DmCadastroLocalizacao: TDmCadastroLocalizacao
     Top = 112
   end
   object CdsPais: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'DspPais'
@@ -81,7 +82,8 @@ object DmCadastroLocalizacao: TDmCadastroLocalizacao
   object SdsEstado: TSQLDataSet
     CommandText = 
       'SELECT ESTADO.CODIGO, ESTADO.NOME, ESTADO.SIGLA, ESTADO.CODIGO_P' +
-      'AIS FROM ESTADO'
+      'AIS FROM ESTADO'#13#10'INNER JOIN PAIS'#13#10'        ON (ESTADO.CODIGO_PAIS' +
+      ' = PAIS.CODIGO)'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = DmDatabse.Conexao
@@ -122,11 +124,12 @@ object DmCadastroLocalizacao: TDmCadastroLocalizacao
     Top = 112
   end
   object CdsEstado: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'DspEstado'
-    AfterPost = CdsPaisAfterPost
-    AfterDelete = CdsPaisAfterDelete
+    AfterPost = CdsEstadoAfterPost
+    AfterDelete = CdsEstadoAfterDelete
     Left = 144
     Top = 160
     object CdsEstadoCODIGO: TLargeintField
@@ -156,6 +159,7 @@ object DmCadastroLocalizacao: TDmCadastroLocalizacao
       Required = True
     end
     object CdsEstadoPAIS_NOME: TStringField
+      DisplayLabel = 'Nome Pa'#237's'
       FieldKind = fkLookup
       FieldName = 'PAIS_NOME'
       LookupDataSet = CdsPais
@@ -170,7 +174,8 @@ object DmCadastroLocalizacao: TDmCadastroLocalizacao
   object SdsCidade: TSQLDataSet
     CommandText = 
       'SELECT CIDADE.CODIGO, CIDADE.NOME, CIDADE.IBGE, CIDADE.CODIGO_ES' +
-      'TADO FROM CIDADE'
+      'TADO FROM CIDADE'#13#10'INNER JOIN ESTADO'#13#10'        ON (CIDADE.CODIGO_E' +
+      'STADO = ESTADO.CODIGO)'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = DmDatabse.Conexao
@@ -210,11 +215,12 @@ object DmCadastroLocalizacao: TDmCadastroLocalizacao
     Top = 112
   end
   object CdsCidade: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'DspCidade'
-    AfterPost = CdsPaisAfterPost
-    AfterDelete = CdsPaisAfterDelete
+    AfterPost = CdsCidadeAfterPost
+    AfterDelete = CdsCidadeAfterDelete
     Left = 200
     Top = 160
     object CdsCidadeCODIGO: TLargeintField
@@ -235,6 +241,23 @@ object DmCadastroLocalizacao: TDmCadastroLocalizacao
       FieldName = 'IBGE'
       ProviderFlags = [pfInUpdate]
       Required = True
+    end
+    object CdsCidadeCODIGO_ESTADO: TLargeintField
+      DisplayLabel = 'C'#243'digo Estado'
+      FieldName = 'CODIGO_ESTADO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+    object CdsCidadeNOME_ESTADO: TStringField
+      DisplayLabel = 'Nome Estado'
+      FieldKind = fkLookup
+      FieldName = 'NOME_ESTADO'
+      LookupDataSet = CdsEstado
+      LookupKeyFields = 'CODIGO'
+      LookupResultField = 'NOME'
+      KeyFields = 'CODIGO_ESTADO'
+      Size = 60
+      Lookup = True
     end
   end
 end

@@ -1,0 +1,40 @@
+unit Frm.Estado;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB,
+  Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Dm.Cadastro.Localizacao, Vcl.DBCtrls,
+  Vcl.StdCtrls, Vcl.Mask;
+
+type
+  TFrmEstado = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    DBNavigator1: TDBNavigator;
+    DBEdtCodigo: TDBEdit;
+    DBEdtNome: TDBEdit;
+    DBEdtSigla: TDBEdit;
+    LblCodigo: TLabel;
+    LblNome: TLabel;
+    LblSigla: TLabel;
+    LblPais: TLabel;
+    DBLkpCbPais: TDBLookupComboBox;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmEstado: TFrmEstado;
+
+implementation
+
+{$R *.dfm}
+
+end.

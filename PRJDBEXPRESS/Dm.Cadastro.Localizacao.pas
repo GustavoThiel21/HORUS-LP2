@@ -41,8 +41,14 @@ type
     CdsCidadeNOME: TStringField;
     CdsCidadeIBGE: TIntegerField;
     CdsEstadoPAIS_NOME: TStringField;
-    procedure CdsPaisAfterPost(DataSet: TDataSet);
+    CdsCidadeCODIGO_ESTADO: TLargeintField;
+    CdsCidadeNOME_ESTADO: TStringField;
     procedure CdsPaisAfterDelete(DataSet: TDataSet);
+    procedure CdsPaisAfterPost(DataSet: TDataSet);
+    procedure CdsEstadoAfterPost(DataSet: TDataSet);
+    procedure CdsEstadoAfterDelete(DataSet: TDataSet);
+    procedure CdsCidadeAfterDelete(DataSet: TDataSet);
+    procedure CdsCidadeAfterPost(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -61,14 +67,40 @@ uses
 
 {$R *.dfm}
 
-procedure TDmCadastroLocalizacao.CdsPaisAfterDelete(DataSet: TDataSet);
+procedure TDmCadastroLocalizacao.CdsCidadeAfterDelete(DataSet: TDataSet);
 begin
   CdsCidade.ApplyUpdates(0);
+
+end;
+
+procedure TDmCadastroLocalizacao.CdsCidadeAfterPost(DataSet: TDataSet);
+begin
+  CdsCidade.ApplyUpdates(0);
+
+end;
+
+procedure TDmCadastroLocalizacao.CdsEstadoAfterDelete(DataSet: TDataSet);
+begin
+  CdsEstado.ApplyUpdates(0);
+
+end;
+
+procedure TDmCadastroLocalizacao.CdsEstadoAfterPost(DataSet: TDataSet);
+begin
+  CdsEstado.ApplyUpdates(0);
+
+end;
+
+procedure TDmCadastroLocalizacao.CdsPaisAfterDelete(DataSet: TDataSet);
+begin
+  CdsPais.ApplyUpdates(0);
+
 end;
 
 procedure TDmCadastroLocalizacao.CdsPaisAfterPost(DataSet: TDataSet);
 begin
-  CdsCidade.ApplyUpdates(0);
+  CdsPais.ApplyUpdates(0);
+
 end;
 
 end.

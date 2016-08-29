@@ -9,7 +9,7 @@ uses
 
 type
   TFrmPais = class(TForm)
-    DataSource1: TDataSource;
+    DsPais: TDataSource;
     Panel1: TPanel;
     DBNavigator1: TDBNavigator;
     Panel2: TPanel;
