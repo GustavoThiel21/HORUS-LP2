@@ -1,0 +1,68 @@
+object DmCadastroGeral: TDmCadastroGeral
+  OldCreateOrder = False
+  Height = 248
+  Width = 413
+  object SdsProduto: TSQLDataSet
+    CommandText = 
+      'SELECT PRODUTO.CODIGO,'#13#10'       PRODUTO.DESCRICAO,'#13#10'       PRODUT' +
+      'O.PRECO'#13#10'  FROM PRODUTO'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = DmDatabse.Conexao
+    Left = 88
+    Top = 56
+    object SdsProdutoCODIGO: TLargeintField
+      FieldName = 'CODIGO'
+      ProviderFlags = [pfInUpdate, pfInKey]
+      Required = True
+    end
+    object SdsProdutoDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 60
+    end
+    object SdsProdutoPRECO: TFMTBCDField
+      FieldName = 'PRECO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Precision = 18
+      Size = 2
+    end
+  end
+  object DspProduto: TDataSetProvider
+    DataSet = SdsProduto
+    Options = [poAllowCommandText, poUseQuoteChar]
+    UpdateMode = upWhereKeyOnly
+    Left = 88
+    Top = 112
+  end
+  object CdsProduto: TClientDataSet
+    Aggregates = <>
+    CommandText = 
+      'SELECT PRODUTO.CODIGO,'#13#10'       PRODUTO.DESCRICAO,'#13#10'       PRODUT' +
+      'O.PRECO'#13#10'  FROM PRODUTO'
+    Params = <>
+    ProviderName = 'DspProduto'
+    Left = 88
+    Top = 160
+    object CdsProdutoCODIGO: TLargeintField
+      FieldName = 'CODIGO'
+      ProviderFlags = [pfInUpdate, pfInKey]
+      Required = True
+    end
+    object CdsProdutoDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 60
+    end
+    object CdsProdutoPRECO: TFMTBCDField
+      FieldName = 'PRECO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Precision = 18
+      Size = 2
+    end
+  end
+end

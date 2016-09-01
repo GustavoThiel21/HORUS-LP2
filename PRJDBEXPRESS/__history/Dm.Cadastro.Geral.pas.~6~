@@ -1,0 +1,45 @@
+unit Dm.Cadastro.Geral;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Dm.Database, Data.FMTBcd, Data.DB,
+  Datasnap.DBClient, Datasnap.Provider, Data.SqlExpr;
+
+type
+  TDmCadastroGeral = class(TDataModule)
+    SdsProduto: TSQLDataSet;
+    DspProduto: TDataSetProvider;
+    CdsProduto: TClientDataSet;
+    SdsProdutoCODIGO: TLargeintField;
+    SdsProdutoDESCRICAO: TStringField;
+    SdsProdutoPRECO: TFMTBCDField;
+    CdsProdutoCODIGO: TLargeintField;
+    CdsProdutoDESCRICAO: TStringField;
+    CdsProdutoPRECO: TFMTBCDField;
+    SdsCliente: TSQLDataSet;
+    LargeintField1: TLargeintField;
+    StringField1: TStringField;
+    FMTBCDField1: TFMTBCDField;
+    DspCliente: TDataSetProvider;
+    CdsCliente: TClientDataSet;
+    LargeintField2: TLargeintField;
+    StringField2: TStringField;
+    FMTBCDField2: TFMTBCDField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DmCadastroGeral: TDmCadastroGeral;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.
+

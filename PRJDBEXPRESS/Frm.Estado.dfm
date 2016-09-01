@@ -1,7 +1,7 @@
 object FrmEstado: TFrmEstado
   Left = 0
   Top = 0
-  Caption = 'FrmEstado'
+  Caption = 'Cadastro estado'
   ClientHeight = 353
   ClientWidth = 665
   Color = clBtnFace
@@ -22,7 +22,6 @@ object FrmEstado: TFrmEstado
     Height = 35
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 685
     object DBNavigator1: TDBNavigator
       Left = 1
       Top = 1
@@ -40,9 +39,6 @@ object FrmEstado: TFrmEstado
     Height = 120
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = 1
-    ExplicitTop = 36
-    ExplicitWidth = 547
     object LblCodigo: TLabel
       Left = 24
       Top = 6
@@ -118,9 +114,6 @@ object FrmEstado: TFrmEstado
     Height = 198
     Align = alClient
     TabOrder = 2
-    ExplicitTop = 137
-    ExplicitWidth = 527
-    ExplicitHeight = 192
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1

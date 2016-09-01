@@ -1,0 +1,5 @@
+object DmMovimentacao: TDmMovimentacao
+  OldCreateOrder = False
+  Height = 332
+  Width = 489
+end

@@ -103,6 +103,28 @@
             <Form>FrmCidade</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Dm.Cadastro.Geral.pas">
+            <Form>DmCadastroGeral</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Frm.Produto.pas">
+            <Form>FrmProduto</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Frm.Cliente.pas">
+            <Form>FrmCliente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Dm.Movimentacao.pas">
+            <Form>DmMovimentacao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Frm.Venda.pas">
+            <Form>FrmVenda</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

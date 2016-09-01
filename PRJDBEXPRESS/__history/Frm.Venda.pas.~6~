@@ -1,0 +1,64 @@
+unit Frm.Venda;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Cadastro.Geral, Dm.Cadastro.Localizacao,
+  Dm.Database, Dm.Movimentacao, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Grids,
+  Vcl.DBGrids, Data.DB, Vcl.ExtCtrls;
+
+type
+  TFrmVenda = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel4: TPanel;
+    DsItem: TDataSource;
+    DsVenda: TDataSource;
+    DsCliente: TDataSource;
+    DsProduto: TDataSource;
+    DBNavigator1: TDBNavigator;
+    DBNavigator2: TDBNavigator;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBGrid2: TDBGrid;
+    DBGrid1: TDBGrid;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmVenda: TFrmVenda;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmVenda.FormCreate(Sender: TObject);
+begin
+  DmMovimentacao.CdsVenda.Open;
+  DmCadastroGeral.CdsCliente.Open;
+  DmMovimentacao.CdsItem.Open;
+  DmCadastroGeral.CdsProduto.Open;
+
+end;
+
+procedure TFrmVenda.FormDestroy(Sender: TObject);
+begin
+  DmMovimentacao.CdsVenda.Close;
+  DmCadastroGeral.CdsCliente.Close;
+  DmMovimentacao.CdsItem.Close;
+  DmCadastroGeral.CdsProduto.Close;
+
+end;
+
+end.
+

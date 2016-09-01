@@ -1,0 +1,28 @@
+object DmMovimentacao: TDmMovimentacao
+  OldCreateOrder = False
+  Height = 332
+  Width = 489
+  object SdsVenda: TSQLDataSet
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = DmDatabse.Conexao
+    Left = 88
+    Top = 56
+  end
+  object DspVenda: TDataSetProvider
+    DataSet = SdsVenda
+    Options = [poAllowCommandText, poUseQuoteChar]
+    UpdateMode = upWhereKeyOnly
+    Left = 88
+    Top = 112
+  end
+  object CdsVenda: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DspVenda'
+    AfterPost = CdsVendaAfterPost
+    AfterDelete = CdsVendaAfterDelete
+    Left = 88
+    Top = 160
+  end
+end

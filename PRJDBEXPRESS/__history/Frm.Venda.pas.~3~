@@ -1,0 +1,36 @@
+unit Frm.Venda;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Cadastro.Geral, Dm.Cadastro.Localizacao,
+  Dm.Database, Dm.Movimentacao;
+
+type
+  TFrmVenda = class(TForm)
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmVenda: TFrmVenda;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmVenda.FormCreate(Sender: TObject);
+begin
+  DmMovimentacao.CdsVenda.Open;
+  DmCadastroGeral.CdsCliente.Open;
+  DmMovimentacao.CdsItem.Open;
+  DmCadastroGeral.CdsProduto.Open;
+
+end;
+
+end.
+

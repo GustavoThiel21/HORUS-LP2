@@ -1,0 +1,57 @@
+unit Dm.Cadastro.Geral;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Dm.Database, Data.FMTBcd, Data.DB, Datasnap.DBClient,
+  Datasnap.Provider, Data.SqlExpr;
+
+type
+  TDmCadastroGeral = class(TDataModule)
+    SdsProduto: TSQLDataSet;
+    DspProduto: TDataSetProvider;
+    CdsProduto: TClientDataSet;
+    SdsProdutoCODIGO: TLargeintField;
+    SdsProdutoDESCRICAO: TStringField;
+    SdsProdutoPRECO: TFMTBCDField;
+    CdsProdutoCODIGO: TLargeintField;
+    CdsProdutoDESCRICAO: TStringField;
+    CdsProdutoPRECO: TFMTBCDField;
+    SdsCliente: TSQLDataSet;
+    LargeintField1: TLargeintField;
+    StringField1: TStringField;
+    FMTBCDField1: TFMTBCDField;
+    DspCliente: TDataSetProvider;
+    CdsCliente: TClientDataSet;
+    LargeintField2: TLargeintField;
+    StringField2: TStringField;
+    FMTBCDField2: TFMTBCDField;
+    procedure CdsProdutoAfterPost(DataSet: TDataSet);
+    procedure CdsProdutoAfterDelete(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DmCadastroGeral: TDmCadastroGeral;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDmCadastroGeral.CdsProdutoAfterDelete(DataSet: TDataSet);
+begin
+  CdsProduto.ApplyUpdates(0);
+end;
+
+procedure TDmCadastroGeral.CdsProdutoAfterPost(DataSet: TDataSet);
+begin
+  CdsProduto.ApplyUpdates(0);
+end;
+
+end.
+

@@ -20,9 +20,9 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'Cadastros'
       object Localizao1: TMenuItem
         Caption = 'Localiza'#231#227'o'
-        object Pas1: TMenuItem
+        object Pais1: TMenuItem
           Caption = 'Pa'#237's'
-          OnClick = Pas1Click
+          OnClick = Pais1Click
         end
         object Estado1: TMenuItem
           Caption = 'Estado'
@@ -32,6 +32,24 @@ object FrmPrincipal: TFrmPrincipal
           Caption = 'Cidade'
           OnClick = Cidade1Click
         end
+      end
+      object Geral1: TMenuItem
+        Caption = 'Geral'
+        object Produto1: TMenuItem
+          Caption = 'Produto'
+          OnClick = Produto1Click
+        end
+        object Cliente1: TMenuItem
+          Caption = 'Cliente'
+          OnClick = Cliente1Click
+        end
+      end
+    end
+    object Movimentao1: TMenuItem
+      Caption = 'Movimenta'#231#227'o'
+      object Realizaodevenda1: TMenuItem
+        Caption = 'Realiza'#231#227'o de venda'
+        OnClick = Realizaodevenda1Click
       end
     end
   end

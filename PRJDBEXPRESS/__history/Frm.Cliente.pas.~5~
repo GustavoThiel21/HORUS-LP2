@@ -1,0 +1,28 @@
+unit Frm.Cliente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Dm.Database,
+  Dm.Cadastro.Geral;
+
+type
+  TFrmCliente = class(TForm)
+    DsCliente: TDataSource;
+    DataSource2: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmCliente: TFrmCliente;
+
+implementation
+
+{$R *.dfm}
+
+end.
+

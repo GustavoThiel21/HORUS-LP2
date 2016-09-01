@@ -1,0 +1,220 @@
+object FrmVenda: TFrmVenda
+  Left = 0
+  Top = 0
+  Caption = 'Realiza'#231#227'o de venda'
+  ClientHeight = 454
+  ClientWidth = 664
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 664
+    Height = 35
+    Align = alTop
+    TabOrder = 0
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 1
+      Width = 312
+      Height = 33
+      DataSource = DsVenda
+      Align = alLeft
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 35
+    Width = 664
+    Height = 174
+    Align = alTop
+    TabOrder = 1
+    object DBEdit1: TDBEdit
+      Left = 9
+      Top = 24
+      Width = 121
+      Height = 21
+      DataSource = DsVenda
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 136
+      Top = 24
+      Width = 121
+      Height = 21
+      DataSource = DsVenda
+      TabOrder = 1
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 64
+      Width = 662
+      Height = 109
+      Align = alBottom
+      DataSource = DsVenda
+      TabOrder = 2
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'CODIGO'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DATA'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'OBS'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'CODIGO_CLIENTE'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'NOME_CLIENTE'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'SdsItem'
+          Visible = True
+        end>
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Top = 209
+    Width = 664
+    Height = 245
+    Align = alTop
+    TabOrder = 2
+    ExplicitTop = 201
+    object DBNavigator2: TDBNavigator
+      Left = 9
+      Top = 2
+      Width = 248
+      Height = 23
+      DataSource = DsItem
+      Align = alCustom
+      TabOrder = 0
+    end
+    object DBEdit3: TDBEdit
+      Left = 32
+      Top = 40
+      Width = 121
+      Height = 21
+      DataSource = DsItem
+      TabOrder = 1
+    end
+    object DBEdit4: TDBEdit
+      Left = 32
+      Top = 80
+      Width = 121
+      Height = 21
+      DataSource = DsItem
+      TabOrder = 2
+    end
+    object DBEdit5: TDBEdit
+      Left = 168
+      Top = 80
+      Width = 121
+      Height = 21
+      DataSource = DsItem
+      TabOrder = 3
+    end
+    object DBEdit6: TDBEdit
+      Left = 320
+      Top = 80
+      Width = 121
+      Height = 21
+      DataSource = DsItem
+      TabOrder = 4
+    end
+    object DBGrid2: TDBGrid
+      Left = 1
+      Top = 107
+      Width = 662
+      Height = 137
+      Align = alBottom
+      DataSource = DsItem
+      TabOrder = 5
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'CODIGO_VENDA_ITEM'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'QUANTIDADE'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'UNITARIO'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'TOTAL'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'CODIGO_VENDA'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'CODIGO_PRODUTO'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'PRODUTO'
+          Visible = True
+        end>
+    end
+  end
+  object DsItem: TDataSource
+    DataSet = DmMovimentacao.CdsItem
+    Left = 352
+  end
+  object DsVenda: TDataSource
+    DataSet = DmMovimentacao.CdsVenda
+    Left = 416
+  end
+  object DsCliente: TDataSource
+    DataSet = DmCadastroGeral.CdsCliente
+    Left = 480
+  end
+  object DsProduto: TDataSource
+    DataSet = DmCadastroGeral.CdsProduto
+    Left = 544
+  end
+end

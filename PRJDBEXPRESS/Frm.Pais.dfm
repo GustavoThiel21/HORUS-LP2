@@ -1,7 +1,7 @@
 object FrmPais: TFrmPais
   Left = 0
   Top = 0
-  Caption = 'FrmPais'
+  Caption = 'Cadastro pa'#237's'
   ClientHeight = 350
   ClientWidth = 669
   Color = clBtnFace
@@ -22,7 +22,6 @@ object FrmPais: TFrmPais
     Height = 33
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 570
     object DBNavigator1: TDBNavigator
       Left = 1
       Top = 1
@@ -40,8 +39,6 @@ object FrmPais: TFrmPais
     Height = 107
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 57
-    ExplicitWidth = 578
     object Label1: TLabel
       Left = 64
       Top = 6
@@ -115,9 +112,6 @@ object FrmPais: TFrmPais
     Align = alClient
     Caption = 'Panel3'
     TabOrder = 2
-    ExplicitTop = 164
-    ExplicitWidth = 578
-    ExplicitHeight = 126
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
@@ -146,13 +140,11 @@ object FrmPais: TFrmPais
         item
           Expanded = False
           FieldName = 'SIGLA'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'BACEN'
-          Width = 64
           Visible = True
         end>
     end

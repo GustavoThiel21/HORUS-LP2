@@ -5,19 +5,27 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Frm.Pais, Frm.Estado,
-  Frm.Cidade;
+  Frm.Cidade, Frm.Produto, Frm.Cliente, Frm.Venda;
 
 type
   TFrmPrincipal = class(TForm)
     MainMenu1: TMainMenu;
     Cadastros1: TMenuItem;
     Localizao1: TMenuItem;
-    Pas1: TMenuItem;
+    Pais1: TMenuItem;
     Estado1: TMenuItem;
     Cidade1: TMenuItem;
-    procedure Pas1Click(Sender: TObject);
+    Geral1: TMenuItem;
+    Produto1: TMenuItem;
+    Cliente1: TMenuItem;
+    Movimentao1: TMenuItem;
+    Realizaodevenda1: TMenuItem;
+    procedure Pais1Click(Sender: TObject);
     procedure Estado1Click(Sender: TObject);
     procedure Cidade1Click(Sender: TObject);
+    procedure Produto1Click(Sender: TObject);
+    procedure Cliente1Click(Sender: TObject);
+    procedure Realizaodevenda1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +52,18 @@ begin
 
 end;
 
+procedure TFrmPrincipal.Cliente1Click(Sender: TObject);
+var
+  vFrmCliente: TFrmCliente; //variavel do tipo form cliente
+begin
+  vFrmCliente := TFrmCliente.Create(nil); //cria o formulario cliente
+  try
+    vFrmCliente.ShowModal; //chama o formulario cliente
+  finally
+    FreeAndNil(vFrmCliente); //destroi o formulario cliente
+  end;
+end;
+
 procedure TFrmPrincipal.Estado1Click(Sender: TObject);
 var
   vFrmEstado: TFrmEstado; //variavel do tipo form estado
@@ -56,7 +76,7 @@ begin
   end;
 end;
 
-procedure TFrmPrincipal.Pas1Click(Sender: TObject);
+procedure TFrmPrincipal.Pais1Click(Sender: TObject);
 var
   vFrmPais: TFrmPais; //variavel do tipo form pais
 begin
@@ -66,6 +86,31 @@ begin
   finally
     FreeAndNil(vFrmPais); //destroi o formulario pais
   end;
+end;
+
+procedure TFrmPrincipal.Produto1Click(Sender: TObject);
+var
+  vFrmProduto: TFrmProduto; //variavel do tipo form produto
+begin
+  vFrmProduto := TFrmProduto.Create(nil); //cria o formulario produto
+  try
+    vFrmProduto.ShowModal; //chama o formulario produto
+  finally
+    FreeAndNil(vFrmProduto); //destroi o formulario produto
+  end;
+end;
+
+procedure TFrmPrincipal.Realizaodevenda1Click(Sender: TObject);
+var
+  vFrmVenda: TFrmVenda; //variavel do tipo form venda
+begin
+  vFrmVenda := TFrmVenda.Create(nil); //cria o formulario venda
+  try
+    vFrmVenda.ShowModal; //chama o formulario venda
+  finally
+    FreeAndNil(vFrmVenda); //destroi o formulario venda
+  end;
+
 end;
 
 end.

@@ -1,7 +1,7 @@
 object FrmCidade: TFrmCidade
   Left = 0
   Top = 0
-  Caption = 'FrmCidade'
+  Caption = 'Cadastro cidade'
   ClientHeight = 353
   ClientWidth = 670
   Color = clBtnFace
@@ -22,7 +22,6 @@ object FrmCidade: TFrmCidade
     Height = 35
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 725
     object DBNavigator1: TDBNavigator
       Left = 1
       Top = 1
@@ -31,7 +30,6 @@ object FrmCidade: TFrmCidade
       DataSource = DsCidade
       Align = alLeft
       TabOrder = 0
-      ExplicitHeight = 39
     end
   end
   object Panel2: TPanel
@@ -41,8 +39,6 @@ object FrmCidade: TFrmCidade
     Height = 122
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 41
-    ExplicitWidth = 598
     object LblCodigo: TLabel
       Left = 40
       Top = 13
@@ -118,10 +114,6 @@ object FrmCidade: TFrmCidade
     Height = 196
     Align = alClient
     TabOrder = 2
-    ExplicitLeft = 413
-    ExplicitTop = 370
-    ExplicitWidth = 119
-    ExplicitHeight = 185
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
