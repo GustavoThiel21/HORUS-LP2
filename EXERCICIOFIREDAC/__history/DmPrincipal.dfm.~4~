@@ -1,0 +1,26 @@
+object DataModule3: TDataModule3
+  OldCreateOrder = False
+  Height = 210
+  Width = 374
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\LP2\HORUS-LP2\EXERCICIOFIREDAC\BANCO\CARROS E MULTAS' +
+        '.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'DriverID=FB')
+    LoginPrompt = False
+    Left = 40
+    Top = 32
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 40
+    Top = 112
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 192
+    Top = 56
+  end
+end

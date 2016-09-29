@@ -1,0 +1,176 @@
+object DmPrincipal: TDmPrincipal
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 302
+  Width = 349
+  object FDConnection: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\LP2\HORUS-LP2\EXERCICIOFIREDAC\BANCO\CARROS E MULTAS' +
+        '.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 40
+    Top = 32
+  end
+  object QryProprietario: TFDQuery
+    Connection = FDConnection
+    SQL.Strings = (
+      'SELECT PROPRIETARIO.PRP_CODIGO, PROPRIETARIO.PRP_NOME, '
+      'PROPRIETARIO.PRP_ENDERECO FROM PROPRIETARIO')
+    Left = 40
+    Top = 112
+    object QryProprietarioPRP_CODIGO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'PRP_CODIGO'
+      Origin = 'PRP_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryProprietarioPRP_NOME: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'PRP_NOME'
+      Origin = 'PRP_NOME'
+      Required = True
+      Size = 60
+    end
+    object QryProprietarioPRP_ENDERECO: TStringField
+      DisplayLabel = 'Endere'#231'o'
+      FieldName = 'PRP_ENDERECO'
+      Origin = 'PRP_ENDERECO'
+      Size = 100
+    end
+  end
+  object FDPhysFBDriverLink: TFDPhysFBDriverLink
+    Left = 248
+    Top = 32
+  end
+  object FDGUIxWaitCursor: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 144
+    Top = 32
+  end
+  object QryVeiculo: TFDQuery
+    Connection = FDConnection
+    SQL.Strings = (
+      'SELECT * FROM VEICULO')
+    Left = 136
+    Top = 112
+    object QryVeiculoVEI_CODIGO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'VEI_CODIGO'
+      Origin = 'VEI_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryVeiculoVEI_PLACA: TStringField
+      DisplayLabel = 'Placa'
+      FieldName = 'VEI_PLACA'
+      Origin = 'VEI_PLACA'
+      Required = True
+      Size = 10
+    end
+    object QryVeiculoVEI_MARCA: TStringField
+      DisplayLabel = 'Marca'
+      FieldName = 'VEI_MARCA'
+      Origin = 'VEI_MARCA'
+      Required = True
+      Size = 30
+    end
+    object QryVeiculoVEI_MODELO: TStringField
+      DisplayLabel = 'Modelo'
+      FieldName = 'VEI_MODELO'
+      Origin = 'VEI_MODELO'
+      Required = True
+      Size = 30
+    end
+    object QryVeiculoVEI_ANO: TIntegerField
+      DisplayLabel = 'Ano'
+      FieldName = 'VEI_ANO'
+      Origin = 'VEI_ANO'
+      Required = True
+    end
+    object QryVeiculoPRP_CODIGO: TIntegerField
+      FieldName = 'PRP_CODIGO'
+      Origin = 'PRP_CODIGO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+    object QryVeiculoNOME_PROPRIETARIO: TStringField
+      FieldKind = fkLookup
+      FieldName = 'NOME_PROPRIETARIO'
+      LookupDataSet = QryProprietario
+      LookupKeyFields = 'PRP_CODIGO'
+      LookupResultField = 'PRP_NOME'
+      KeyFields = 'PRP_CODIGO'
+      ProviderFlags = [pfInUpdate]
+      Size = 100
+      Lookup = True
+    end
+  end
+  object DsMestreVeiculo: TDataSource
+    DataSet = QryVeiculo
+    Left = 136
+    Top = 176
+  end
+  object QryMultas: TFDQuery
+    AfterInsert = QryMultasAfterInsert
+    MasterSource = DsMestreVeiculo
+    MasterFields = 'VEI_CODIGO'
+    Connection = FDConnection
+    SQL.Strings = (
+      'SELECT * FROM MULTAS'
+      'WHERE(MULTAS.VEI_CODIGO = :VEI_CODIGO)')
+    Left = 136
+    Top = 232
+    ParamData = <
+      item
+        Name = 'VEI_CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object QryMultasVEI_CODIGO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'VEI_CODIGO'
+      Origin = 'VEI_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryMultasMLT_ITEM: TIntegerField
+      DisplayLabel = 'Item'
+      FieldName = 'MLT_ITEM'
+      Origin = 'MLT_ITEM'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryMultasMLT_DATA: TDateField
+      DisplayLabel = 'Data'
+      FieldName = 'MLT_DATA'
+      Origin = 'MLT_DATA'
+      Required = True
+    end
+    object QryMultasMLT_HORA: TTimeField
+      DisplayLabel = 'Hora'
+      FieldName = 'MLT_HORA'
+      Origin = 'MLT_HORA'
+    end
+    object QryMultasMLT_VALOR: TBCDField
+      DisplayLabel = 'Valor'
+      FieldName = 'MLT_VALOR'
+      Origin = 'MLT_VALOR'
+      Required = True
+      Precision = 18
+      Size = 2
+    end
+    object QryMultasMLT_LOCAL: TStringField
+      DisplayLabel = 'Local'
+      FieldName = 'MLT_LOCAL'
+      Origin = 'MLT_LOCAL'
+      Size = 100
+    end
+  end
+end
